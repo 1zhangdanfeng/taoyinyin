@@ -1,0 +1,115 @@
+<include file='user/header' />
+<include file='./nav' />
+
+<div class="collapse user">
+<include file='user/left' />
+
+<div class="small-10 large-11 columns">
+<div class="main-box print">
+
+  <div class="row">
+      <div class="large-12">
+        <ul class="breadcrumbs">
+          <li><i class="fi-home"></i> <a href="#">客户中心</a></li>
+          <li><a href="#">开始打印</a></li>
+        </ul>
+    </div>
+  </div>
+  
+  <div class="row panel school">
+    <div>
+      <div class="large-6 left">
+        <input type="button" class="button tiny secondary" id="school-name" onblur="if(this.value==''){this.value='请选择大学'}" onfocus="if(this.value=='请选择大学'){this.value=''}" value="{{$schoolname}}" />
+      </div>
+      <div class="large-6 right money">
+        ￥{{$money}}元 <small>{{$point}}金币</small>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="message">
+      <form method="post" id="order" action="<php>echo U('pay');</php>">
+        <div class="large-12">
+            <textarea name="message" placeholder="给打印店的留言"></textarea>
+        </div>
+        <input type="hidden" name="shopid">
+        <input type="hidden" name="oid" value="{{$order_id}}">
+        <input type="hidden" name="rcode" value="{{$rcode}}">
+      </form>
+    </div>
+  </div>
+
+  <div class="row panel shop">
+
+    <dl class="accordion" id="shop-list" data-accordion>
+      
+    </dl>
+
+  </div>
+
+</div>
+</div>
+
+</div>
+
+<div class="clearfix"></div>
+
+<div id="choose-box-wrapper">
+  <div id="choose-box">
+    <div id="choose-box-title">
+      <span>选择学校</span>
+    </div>
+    <div id="choose-a-province"></div>
+    <div id="choose-a-school"></div>
+    <div id="choose-box-bottom">
+      <input type="botton" onclick="hide()" value="关闭" />
+    </div>
+  </div>
+</div>
+
+<include file='./footer' />
+<script type="text/javascript" src="{{$static}}js/school.js"></script>
+<script type="text/javascript">
+  afterclose = function(school){
+    $.ajax({
+      'url': '<php>echo U('shop');</php>',
+      'data': {
+        'school': school
+      },
+      'dataType': 'json',
+      'success': function(data){
+        var shops = data.items;
+        $("#shop-list").html('');
+        for(var k in shops){
+          var template = '<dd class="accordion-navigation">\
+            <a href="#panel'+k+'"><i class="fi-print"></i> '+shops[k]['shopname']+'</a>\
+            <div id="panel'+k+'" class="content">\
+              <div class="tabs-content">\
+                <div class="large-10 columns">\
+                  <p>地址：'+shops[k]['address']+'</p>\
+                  <p>'+shops[k]['detail']+'</p>\
+                </div>\
+                <div class="large-2 columns">\
+                  <a name="'+shops[k]['sid']+'" class="button tiny right prt-btn">打印</a>\
+                </div>\
+              </div>\
+            </div>\
+          </dd>';
+          $("#shop-list").append(template);
+        }
+        $('.prt-btn').click(function(){
+          var sid = this.name;
+          $("[name='shopid']").val(sid);
+          $("#order").submit();
+        })
+      }
+    })
+  };
+  afterclose('{{$schoolname}}');
+  $(document).ready(function(){
+    $('#school-name').bind('click', function(){
+      pop();
+    });
+  });
+</script>
+  </body>
+</html>

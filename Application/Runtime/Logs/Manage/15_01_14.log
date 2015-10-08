@@ -1,0 +1,6 @@
+[ 2015-01-14T15:42:30+08:00 ] 210.27.11.199 /index.php/manage/shop/edit/sid/20.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'sname'
+
+[ 2015-01-14T15:52:34+08:00 ] 210.27.11.199 /index.php/manage/shop/edit/sid/20.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'sname'
+

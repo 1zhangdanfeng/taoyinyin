@@ -1,0 +1,154 @@
+body.index {
+	background-color: #f4f4f4;
+}
+.index-intro {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	background-color: #fff;
+	background-size: auto 500px;
+	background-position: center;
+	height: 600px;
+}
+.index-bo {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	background: url(../img/bg/main.png) no-repeat;
+	background-size: auto 500px;
+	background-position: center;
+	height: 600px;
+}
+.index-footer{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	background: url(../img/bg/footer.png) no-repeat;
+	background-size: auto 500px;
+	background-position: center;
+	height: 600px;
+}
+.begin-print {
+	background-color: #f4f4f4;
+	margin-top: 80px;
+	padding: 40px 0;
+}
+.ploee {
+	height: 300px;
+}
+.zurb-footer-bottom {
+	background: #333;
+	padding: 24px 0 10px;
+}
+.zurb-footer-bottom .row {
+	max-width: 80rem;
+}
+.zurb-footer-bottom a.zurb-logo {
+	color: #858585;
+	font-weight: normal;
+	background: url(../img/footer-icons.png) no-repeat 0 3px;
+	padding: 25px 0 0 0;
+	font-size: 0.88889rem;
+	display: inline-block;
+	width: 90px;
+}
+.zurb-footer-bottom ul.zurb-links li a {
+	color: #666666;
+	padding: 3px 6px;
+}
+.zurb-footer-bottom ul.zurb-links li a:hover {
+	color: #777777;
+}
+.zurb-footer-bottom a.zurb-logo:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.zurb-footer-bottom ul.zurb-links {
+	margin: 0;
+	display: inline-block;
+}
+.zurb-footer-bottom ul.zurb-links {
+	margin: 0;
+	display: inline-block;
+	padding-bottom: 0px;
+}
+.zurb-footer-bottom ul.home-social {
+	display: block;
+	float: right;
+	margin-bottom: 8px;
+}
+.zurb-footer-bottom ul.zurb-links li {
+	display: block;
+	float: left;
+	margin-left: 6px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.77778rem;
+}
+.zurb-footer-bottom p.copyright {
+	margin: 6px 0 0;
+	font-size: 0.75rem;
+	color: #666666;
+}
+.zurb-footer-bottom ul.home-social {
+	display: block;
+	float: right;
+	margin-bottom: 8px;
+}
+.zurb-footer-bottom ul.home-social li {
+	list-style: none;
+	display: block;
+	float: left;
+	margin-left: 10px;
+}
+.zurb-footer-bottom ul.home-social li:first-child {
+	margin-left: 0;
+}
+.zurb-footer-bottom ul.home-social li a {
+	display: block;
+	height: 50px;
+	width: 50px;
+	background: url("../img/social.png") no-repeat center 0;
+}
+.zurb-footer-bottom ul.home-social li a.facebook {
+	background-position: center -200px;
+}
+.zurb-footer-bottom ul.home-social li a.mail {
+	background-position: center -400px;
+}
+.zurb-footer-bottom ul.home-social li a.twitter {
+	background-position: center 0;
+}
+.zurb-footer-bottom ul.home-social li a:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+#courses-banner-large .row {
+	max-width: 80rem;
+}
+#courses-banner-large .banner-image img {
+	width: 95%;
+}
+#courses-banner-large .banner-info h3 {
+	font-size: 36px;
+	font-weight: 200;
+	color: #333;
+	margin: 24px 0 20px;
+}
+#courses-banner-large .banner-info p {
+	font-size: 15px;
+	color: #333;
+}
+#choose-box-wrapper{width:652px;padding:10px;border-radius:5px;display:none;}
+#choose-box{border:1px solid #0078a0;width:650px;background:#fff;}
+#choose-box-title{background:#efefef;color:#111;padding:4px 10px 5px;font-size:14px;font-weight:700;margin:0;}
+#choose-box-title span{font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;}
+#choose-a-province, #choose-a-school{margin:5px 8px 10px 8px;border:1px solid #C3C3C3;}
+#choose-a-province a{display:inline-block;height:18px;line-height:18px;color:#005EAC;text-decoration:none;font-size:9pt;font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;margin:2px 5px;padding:1px;text-align:center;}
+#choose-a-province a:hover{text-decoration:underline;cursor:pointer;}
+#choose-a-province .choosen{background:#005EAC;color:white;}
+#choose-a-school{overflow-x:hidden;overflow-y:auto;height:200px;}
+#choose-a-school a{height:18px;line-height:18px;color:#005EAC;text-decoration:none;font-size:9pt;font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;float:left;width:160px;margin:4px 12px;padding-left:10px;background:url(../img/2012072500060712.gif) no-repeat 0 9px;}
+#choose-a-school a:hover{background:#005EAC;color:#fff;}
+#choose-box-bottom{background:#F0F5F8;padding:4px 8px;text-align:right;border-top:1px solid #CCC;height:40px;}
+#choose-box-bottom input{vertical-align:middle;text-align:center;background:#005EAC;color:white;border-top:1px solid #B8D4E8;border-left:1px solid #B8D4E8;border-right:1px solid #114680;border-bottom:1px solid #114680;cursor:pointer;width:60px;height:25px;margin:0px;}

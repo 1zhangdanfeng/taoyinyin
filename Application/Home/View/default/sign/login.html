@@ -1,0 +1,47 @@
+<include file='sign/header' />
+<include file='./nav' />
+
+<section class="register-box">
+  <h4>用户登录</h4>
+  <form method="post">
+    <div class="row collapse">
+      <div class="small-3 large-3 columns">
+        <span class="prefix">手机号</span>
+      </div>
+      <div class="small-9 large-9 columns">
+        <input type="text" name="uname" placeholder="使用手机号登录">
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-3 large-3 columns">
+        <span class="prefix">密码</span>
+      </div>
+      <div class="small-9 large-9 columns">
+        <input type="password" name="upass" placeholder="输入你的密码">
+      </div>
+    </div>
+    <div class="row collapse">
+      <div class="small-2 large-2 columns right">
+        <div class="switch tiny right">
+          <input id="exampleCheckboxSwitch" name="remember" type="checkbox">
+          <label for="exampleCheckboxSwitch"></label>
+        </div> 
+      </div>
+      <div class="small-10 large-10 columns right text-right">
+        是否保存密码？
+      </div>
+    </div>
+    <div class="row collapse" style="margin-top: 10px;">
+      <div class="small-9 large-9 columns ">
+        <a class="button tiny right alert" href="<php>echo U('forget');</php>" style="margin-right:10px;">忘记密码</a>
+      </div>
+      <div class="small-3 large-3 columns">
+        <button type="submit" class="button tiny regbtn">提交</button>
+      </div>
+    </div>
+  </form>
+</section>
+<div class="clearfix" style="min-height: 120px;"></div>
+<include file='./footer' />
+  </body>
+</html>

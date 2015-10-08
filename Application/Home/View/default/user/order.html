@@ -1,0 +1,155 @@
+<include file='user/header' />
+<include file='./nav' />
+
+<div class="collapse user order">
+<include file='user/left' />
+
+<div class="small-10 large-11 columns">
+  <div class="main-box">
+
+    <div class="row">
+        <div class="large-12">
+          <ul class="breadcrumbs">
+            <li><i class="fi-home"></i> <a href="#">客户中心</a></li>
+            <li><a href="#">历史订单</a></li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="row order-list">
+      <div class="large-12 small-12">
+        <section class="panel">
+          <div class="panel-body">
+
+          <table class="otb">
+            <thead>
+              <tr>
+                <th width="20%">订单号</th>
+                <th width="20%">时间</th>
+                <th width="15%">价格</th>
+                <th width="22%">状态</th>
+                <th>#</th>
+              </tr>
+            </thead>
+            <tbody>
+            <volist name="order" id="row">
+              <tr>
+                <td>{{$row['rcode']}}</td>
+                <td><php>echo totime($row['time']);</php></td>
+                <td>{{$row['point']}}金币</td>
+                <php>
+                  switch($row['status']){
+                    case 0: $status = 'alert';$word='未付款';break;
+                    case 1: $status = 'regular';$word='待打印';break;
+                    case 2: $status = 'success';$word='待取货';break;
+                    default: $status = 'secondary';$word='已完成';break;
+                  }
+                </php>
+                <td><span class="label {{$status}}">{{$word}}</span></td>
+                <td>
+                <a href="#" name="{{$row['rid']}}" class="button secondary tiny see-detail">查看详情</a>
+                <a href="<php>echo U('cancel', "id={$row['rid']}");</php>" name="{{$row['rid']}}" class="button secondary tiny">取消订单</a>
+                </td>
+              </tr>
+            </volist>
+            </tbody>
+          </table>
+          {{$page}}
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div id="myModal" class="reveal-modal tmod" data-reveal>
+  <h3> 订单详情 </h3>
+  
+  <div class="title">订单号: <span id="md-rcode"></span> <span id="md-continue"></span></div>
+  <div class="row collapse">
+    <div class="large-4 columns">
+      <div class="well">
+        <h6>下单时间：<small id="md-time"></small></h6>
+      </div>
+    </div>
+    <div class="large-4 columns">
+      <div class="well">
+        <h6>订单总价：<small id="md-point"></small></h6>
+      </div>
+    </div>
+    <div class="large-4 columns">
+    </div>
+  </div>
+  <div class="row collapse">
+    <div class="large-12 columns">
+      <div class="well">
+        <h6>取货地点：<small id="md-shop"></small></h6>
+      </div>
+    </div>
+  </div>
+
+  <table class="otb">
+    <thead>
+      <tr>
+        <th width="5%">#</th>
+        <th >文件名</th>
+        <th width="12%">纸张大小</th>
+        <th width="12%">页面属性</th>
+        <th width="12%">纸张颜色</th>
+        <th width="12%">打印份数</th>
+        <th width="10%">下载</th>
+      </tr>
+    </thead>
+    <tbody id="md-list">
+      
+    </tbody>
+  </table>
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<form method="post" id="plist" style="display:none;" action="<php>echo U('/home/print/pay');</php>"></form>
+
+<div class="clearfix"></div>
+<include file='./footer' />
+<script>
+  $(document).ready(function(){
+    $(".see-detail").click(function(){
+      $.ajax({
+        'url': '<php>echo U('detail');</php>',
+        'dataType': 'json',
+        'type': 'get',
+        'data': {
+          'id': this.name
+        },
+        'success': function(data){
+          $("#myModal #md-rcode").html(data.rcode);
+          $("#myModal #md-time").html(data.time);
+          $("#myModal #md-point").html(data.point + '金币');
+          $("#myModal #md-shop").html(data.shopname);
+          $("#myModal #md-list").html('');
+          var att = data.attach;
+          if (data['status'] == '0') {
+            $("#md-continue").html('<a href="#" id="md-cntbtn" class="button tiny right">继续订单</a>');
+            var s = data;
+            $("#md-cntbtn").click(function(){
+              location.href = '<php>echo U('/home/print/submit');</php>?oid=' + s.rid;
+            })
+          };
+          for(var k in att){
+            var ye = att[k]['is_double'] == 1 ? '双页' : '单页';
+            var color = att[k]['paper_color'] == 0 ? '黑白' : '彩色';
+            var html = '<tr><td>'+k+'</td><td>'+att[k]['name']+'</td><td>'+att[k]['paper_size']+'</td><td>'+ye+'</td><td>'+color+'</td><td>'+att[k]['file_num']+'</td><td><a href="<php>echo U('home/attachment/download');</php>?id='+att[k]['tid']+'" target="_blank">下载</a></td></tr>';
+            $("#myModal #md-list").append(html);
+          }
+          $('#myModal').foundation('reveal', 'open');
+        }
+      })
+    })
+  })
+</script>
+  </body>
+</html>

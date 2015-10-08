@@ -1,0 +1,1 @@
+a:6:{i:0;s:3:"oid";i:1;s:4:"okey";i:2;s:4:"oval";i:3;s:5:"osort";s:3:"_pk";s:3:"oid";s:5:"_type";a:4:{s:3:"oid";s:16:"int(10) unsigned";s:4:"okey";s:12:"varchar(128)";s:4:"oval";s:4:"text";s:5:"osort";s:23:"enum('int','str','obj')";}}

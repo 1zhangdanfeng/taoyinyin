@@ -1,0 +1,118 @@
+<include file='user/header' />
+<include file='./nav' />
+
+<div class="collapse user print-main">
+<include file='user/left' />
+
+<div class="small-10 large-11 columns" id="upload-page">
+<div class="main-box print">
+
+  <div class="row">
+      <div class="large-12">
+        <ul class="breadcrumbs">
+          <li><i class="fi-home"></i> <a href="#">客户中心</a></li>
+          <li><a href="#">开始打印</a></li>
+        </ul>
+    </div>
+  </div>
+  
+  <div class="panel row uploadbtn">
+    <a class="button tiny left" id="file_upload">点我上传</a>
+    <span class="letf intro"> (目前只支持上传pdf文档，最大10M哦)</span>
+    <a id="submit" class="button tiny right disabled" onclick="if(!$(this).hasClass('disabled')){fsub.submit()};">提交订单</a>
+    <a id="share" class="button tiny right secondary disabled" onclick="if(!$(this).hasClass('disabled')){$('#fsub').attr('action', '<php>echo U('share');</php>').submit();};">仅仅分享</a>
+  </div>
+  <div class="row panel">
+    <form method="post" action="<php>echo U('submit');</php>" id="fsub">
+      <div class="collapse" id="queue">
+        
+      </div>
+    </form>
+  </div>
+
+</div>
+</div>
+</div>
+
+<div class="clearfix"></div>
+<include file='./footer' />
+<script src="{{$static}}js/jquery.uploadifive.js" type="text/javascript"></script>
+<script type="text/javascript">
+  <?php $timestamp = time();?>
+  $(function() {
+    $('#file_upload').uploadifive({
+      'auto'             : true,
+      'buttonText'       : '点我上传',
+      'buttonClass'      : 'button tiny left',
+      'fileType'         : 'application/pdf',
+      'formData'         : {
+                           },
+      'queueID'          : 'queue',
+      'uploadScript'     : '<php>echo U('upload');</php>',
+      'itemTemplate'     : '<div class="large-12 uploadbar uploadifive-queue-item">\
+      <div class="title">\
+        <span class="img left"><i class="filetype icon-pdf"></i></span>\
+        <span class="left name filename"></span>\
+        <span class="right delete close"><i class="fi-x"></i></span>\
+        <span class="label left sucinfo"></span>\
+        <span class="left yenum"></span>\
+        <div class="clearfix"></div>\
+      </div>\
+      <div class="info collapse">\
+        <div class="large-2 columns">\
+            <select disabled>\
+              <option value="0">单面</option>\
+              <option value="1" selected>双面</option>\
+            </select>\
+        </div>\
+        <div class="large-2 columns">\
+          <select disabled>\
+              <option value="a3">A3</option>\
+              <option value="a4" selected>A4</option>\
+              <option value="a5">A5</option>\
+            </select>\
+        </div>\
+        <div class="large-2 columns fen">\
+          <label class="left name">份数：&nbsp;&nbsp;</label>\
+          <input type="number" name="number[]" class="number left" value="1">\
+        </div>\
+        <div class="clearfix"></div>\
+      </div>\
+      <div class="progress">\
+        <div class="meter progress-bar"></div>\
+      </div><input type="hidden" name="upfile[]"></div>',
+      'onUploadComplete' : function(file, data) {
+        var fo = JSON.parse(data);
+        console.log(file);
+        var ch = $(file.queueItem[0]).find("span.sucinfo");
+        var pg = $(file.queueItem[0]).find("span.yenum");
+        if (fo['suc'] != 1) {
+          ch.html("上传失败，" + fo.info).addClass('alert').show();
+        }else{
+          ch.html("上传成功").addClass("success").show();
+          pg.html("页数：" + fo.pages);
+          $(file.queueItem[0]).find("input[name='upfile[]']").val(fo.aid);
+        }
+      },
+      'onQueueComplete' : function(ups){
+        $("#submit").removeClass("disabled");
+        $("#share").removeClass("disabled");
+      },
+      'onProgress' : function(file, e){
+        var ch = $(file.queueItem[0]).find("span.sucinfo");
+        if (e.loaded >= e.total) {
+            ch.html("正在转换格式……").show();
+        }
+      },
+      'onAddQueueItem' : function(file) {
+        if (!$("#submit").hasClass('disabled')) {
+          $("#submit").addClass("disabled");
+          $("#share").addClass("disabled");
+        };
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>

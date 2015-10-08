@@ -1,0 +1,6 @@
+[ 2015-01-03T10:18:02+08:00 ] 210.27.11.199 /index.php/manage/system/set.html
+ERR: 模板不存在:./Application/Manage/View/./Application/Manage/View/default/setting/index.html.html
+
+[ 2015-01-03T21:42:28+08:00 ] 210.27.11.199 /index.php/manage/order/lists.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+

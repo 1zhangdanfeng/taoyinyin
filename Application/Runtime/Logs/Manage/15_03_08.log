@@ -1,0 +1,15 @@
+[ 2015-03-08T13:46:34+08:00 ] 123.138.79.10 /index.php/manage/order/lists/p/2.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+
+[ 2015-03-08T14:45:50+08:00 ] 123.138.79.10 /index.php/manage/shop/edit/sid/6.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'sname'
+
+[ 2015-03-08T14:46:05+08:00 ] 123.138.79.10 /index.php/manage/shop/edit/sid/6.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'sname'
+
+[ 2015-03-08T14:47:06+08:00 ] 123.138.79.10 /index.php/manage/shop/edit/sid/7.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'sname'
+
+[ 2015-03-08T14:49:41+08:00 ] 123.138.79.10 /index.php/manage/shop/edit/sid/6.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'admin' for key 'sname'
+

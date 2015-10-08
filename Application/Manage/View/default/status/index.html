@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<include file="default/header" />
+<script type="text/javascript" src="{{$www}}Public/DatePicker/jquery.DatePicker.js"></script>
+<style>
+    input.abc {
+        margin-bottom: 0; 
+    }
+    table .tableleft {
+        width: 15%;
+    }
+</style>
+<body>
+<form method="post" class="definewidth m20">
+    <input type="text" name="from" id="datefrom" class="abc input-default">
+    到
+    <input type="text" name="to" id="dateto" class="abc input-default"> 
+    <button type="submit" class="btn btn-primary">查询</button>
+</form>
+<if condition="IS_POST">
+<table class="table table-bordered table-hover definewidth m10">
+    <tr>
+        <td class="tableleft">总订单数</td>
+        <td >{{$status.count}}</td>
+    </tr>
+    <tr>
+        <td class="tableleft">未付款数量</td>
+        <td >{{$status.s0}}</td>
+    </tr>
+    <tr>
+        <td class="tableleft">未打印数量</td>
+        <td >{{$status.s1}}</td>
+    </tr>
+    <tr>
+        <td class="tableleft">已完成数量</td>
+        <td >{{$status.s2}}</td>
+    </tr>
+</table>
+<table class="table table-bordered table-hover definewidth m10">
+    <tr>
+        <td class="tableleft">打印店统计</td>
+        <td ></td>
+    </tr>
+    <php>
+    $sum = 0;
+    foreach($status['pages'] as $shop):
+    </php>
+    <tr>
+        <td class="tableleft">{{$shop.name}}</td>
+        <td >{{$shop.page}}</td>
+    </tr>
+    <php>
+    $sum += $shop['page'];
+    endforeach;
+    </php>
+    <tr>
+        <td class="tableleft">总计</td>
+        <td >{{$sum}}</td>
+    </tr>
+</table>
+</if>
+<script>
+function GetDateStr(AddDayCount) {
+    var dd = new Date();
+    dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期
+    var y = dd.getFullYear();
+    var m = dd.getMonth()+1;//获取当前月份的日期
+    var d = dd.getDate(); //3f289a8ed91953ff5d6181594e4fec2d
+    return y+"-"+m+"-"+d;
+}
+
+$(document).ready(function(){
+    <if condition="isset($from) && isset($to)">
+    var lastweek = '{{$from}}';
+    var now = '{{$to}}';
+    <else/>
+    var lastweek = GetDateStr(-7);
+    var now = GetDateStr(0);
+    </if>
+    $('#datefrom').datePicker({ followOffset : [0, 24], defaultDate: lastweek}).val(lastweek);
+    $('#dateto').datePicker({ followOffset : [0, 24], defaultDate: now}).val(now);
+})
+</script>
+</body>
+</html>

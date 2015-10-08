@@ -1,0 +1,1 @@
+a:5:{i:0;s:5:"md5id";i:1;s:5:"attid";i:2;s:4:"hash";s:3:"_pk";s:5:"md5id";s:5:"_type";a:3:{s:5:"md5id";s:16:"int(10) unsigned";s:5:"attid";s:16:"int(10) unsigned";s:4:"hash";s:8:"char(32)";}}

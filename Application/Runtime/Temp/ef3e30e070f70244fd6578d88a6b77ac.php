@@ -1,0 +1,3 @@
+<?php
+//000000000060a:14:{s:9:"site_name";s:21:"淘印印在线打印";s:13:"site_descript";s:54:"O2O在线打印平台，专注于免费打印业务。";s:12:"site_keyword";s:46:"淘印印,在线打印,打印,o2o,免费打印";s:10:"root_email";s:20:"master@taoyinyin.com";s:8:"icp_code";s:27:"备案号正在申请中。";s:9:"stat_code";s:108:"<script src="http://s11.cnzz.com/z_stat.php?id=1253872355&web_id=1253872355" language="JavaScript"></script>";s:8:"web_open";i:1;s:8:"reg_open";i:1;s:10:"print_open";i:1;s:8:"site_url";s:25:"http://www.taoyinyin.com/";s:9:"per_point";i:1;s:10:"page_money";s:4:"0.00";s:9:"smsg_user";s:9:"cf_lkyddx";s:8:"smsg_pwd";s:13:"tyy1qaz2ws3e4";}
+?>

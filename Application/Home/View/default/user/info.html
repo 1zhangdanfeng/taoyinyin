@@ -1,0 +1,104 @@
+<include file='user/header' />
+<include file='./nav' />
+
+<div class="collapse user">
+<include file='user/left' />
+
+<div class="small-10 large-11 columns">
+  <div class="main-box">
+    <div class="row">
+
+<form method="post">
+  <div class="row">
+    <div class="large-4 columns">
+      <label> 用户名
+        <input type="text" value="{{$uinfo['uname']}}" disabled />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label> 你的名字
+        <input type="text" name="truename" placeholder="你的姓名将作为默认收货人姓名" value="{{$uinfo['truename']}}" />
+      </label>
+    </div>
+    <div class="large-4 columns">
+      <label> 邮箱
+        <input type="text" name="email" placeholder="联系邮箱" value="{{$uinfo['email']}}" />
+      </label>
+    </div>
+    <div class="large-4 columns">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label> 修改密码
+        <input type="password" name="upass" placeholder="不修改密码则留空" />
+      </label>
+    </div>
+    <div class="large-8 columns">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label> 年级
+        <select name="grade">
+        <for start="2009" end="2015" name="i" >
+          <eq name="uinfo['grade']" value="$i">
+            <option value="{{$i}}" selected>{{$i}}级</option>
+            <else/>
+            <option value="{{$i}}">{{$i}}级</option>
+          </eq>
+        </for>
+        </select>
+      </label>
+    </div>
+    <div class="large-4 columns">
+      <label> 专业
+          <input type="text" name="major" value="{{$uinfo['major']}}" placeholder="如：通信工程" />
+      </label>
+    </div>
+    <div class="large-4 columns">
+      
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <label>性别</label>
+      <eq name="uinfo['sex']" value="m">
+      <input type="radio" name="sex" value="m" checked><label for="pokemonRed">男</label>
+      <input type="radio" name="sex" value="f"><label for="pokemonBlue">女</label>
+      <else/>
+      <input type="radio" name="sex" value="m"><label for="pokemonRed">男</label>
+      <input type="radio" name="sex" value="f" checked><label for="pokemonBlue">女</label>
+      </eq>
+    </div>
+    <div class="large-6 columns">
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label> 个人说明
+        <textarea rows="5" name="intro" placeholder="一个很无聊的程序员">{{$uinfo['intro']}}</textarea>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-2 columns">
+      <label>
+        <input type="submit" class="button tiny" value="保存">
+      </label>
+    </div>
+  </div>
+</form>
+
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="clearfix"></div>
+<include file='./footer' />
+  </body>
+</html>

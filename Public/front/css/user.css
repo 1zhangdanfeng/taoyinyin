@@ -1,0 +1,335 @@
+body {
+	background-color: #f1f2f7;
+}
+.main-box legend {
+	background-color: #f1f2f7;
+}
+.icon-bar .active {
+	background: #008cba;
+}
+.user .main-box {
+	height: 100%;
+	padding: 35px 10px;
+}
+.main-box .row {
+	margin-left: 0;
+}
+.main-box textarea {
+	resize: none;
+}
+.user .icon-bar.vertical, .icon-bar.small-vertical {
+	min-height: 700px;
+}
+.print-main #float_banner {
+	min-height: 600px;
+}
+.user .breadcrumbs {
+	background-color: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.user .breadcrumbs a{
+	color: #667fa0;
+	text-decoration: none;
+}
+.user .breadcrumbs a:hover{
+	color: #2A3542;
+}
+.user .order-list .panel{
+	background-color: #fff;
+}
+.otb {
+	width: 100%;
+	margin-bottom: 20px;
+	border: 0;
+	border-collapse: collapse;
+	font-family: 'Open Sans', sans-serif;
+}
+.otb thead {
+	background-color: #fff;
+}
+.otb tr {
+	border-color: #ddd;
+	display: table-row;
+}
+.user table.otb tr:hover {
+	background-color: #f5f5f5;
+}
+.mywen table.otb tr {
+	background-color: #fff;
+}
+.mywen table.otb tr.selected {
+	background-color: #f5f5f5;
+}
+.otb td {
+	border-top: 1px solid #ddd;
+	padding: 10px;
+	line-height: 34px;
+}
+.otb a.button {
+	margin-bottom: 0;
+}
+table.otb tr th {
+	color: #797979;
+}
+table.otb tr td {
+	color: #797979;
+}
+.row.collapse > .columns {
+	padding-left: 9px; 
+	padding-right: 9px; 
+}
+.tmod .title {
+	padding-bottom: 10px;
+}
+.tmod .well {
+	background-color: #fff;
+	padding: 9px;
+	border-radius: 1px;
+	min-height: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #e3e3e3;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+.tmod .well h6 {
+	font-size: 0.8rem;
+	margin-bottom: 0.2rem;
+}
+.billing .panel {
+	background-color: #fff;
+}
+.billing legend {
+	background-color: #fff;
+}
+.billing .panel .row {
+	vertical-align:middle;
+}
+.billing .panel .row .button{
+	margin-bottom: 0;
+}
+.mywen .columns.title {
+	height: 150px;
+	background-color: #f1f2f7;
+}
+.mywen .panel{
+	background-color: #fff;
+}
+.mywen .panel table.otb thead tr {
+	background-color: #f3f8ff;
+}
+.mywen table.otb .otb-tb .right {
+	margin-right: 20px;
+	width: 150px;
+}
+.mywen table.otb .otb-tb .right a{
+	float: right;
+	padding: 1px 3px;
+}
+.mywen table.otb .otb-tb .right i {
+	opacity: 0;
+}
+.mywen table.otb .otb-tb tr:hover .right i {
+	opacity: 0.6;
+}
+.mywen table.otb .otb-tb tr:hover .right i:hover {
+	opacity: 1;
+}
+.mywen table.otb td {
+	height: 26px;
+	line-height: 26px;
+	padding-bottom: 8px;
+	padding-top: 8px;
+}
+.ico-down, .ico-download, .ico-del, .ico-move, .ico-rename, .ico-dimensional, .ico-dimensional-menu, .ico-share, .ico-point-bottom, .ico-point-right, .ico-restore, .ico-link, .ico-copy, .ico-lock, .ico-kill-share, .ico-kill-lock, .ico-saveas, .ico-openfold, .ico-movegroup, .ico-mkdir, .ico-emptyrecycle, .ico-clearrecnet, .ico-ref, .ico-folder, .ico-note, .ico-return, .ico-send, .ico-null {
+	width: 20px;
+	height: 20px;
+	background: #f1f2f7 url(../img/ico-message.png) no-repeat -999px -999px;
+	_background-image: url(../img/ico-message-ie6.png);
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+	display: block;
+}
+.ico-del {
+background-position: 0 -326px;
+}
+.ico-down, .ico-download {
+background-position: 0 -358px;
+}
+.ico-rename {
+background-position: 0px -518px;
+}
+.ico-share {
+background-position: 1px -390px;
+}
+.mywen .upbtn .button{
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-weight: bold;
+}
+.mywen .otb .chk-ico {
+background: transparent url(../img/btn_icon.gif) -113px 0 no-repeat;
+width: 14px;
+height: 14px;
+}
+.mywen .otb .chk {
+width: 32px;
+height: 38px;
+cursor: default;
+-moz-user-select: none;
+-khtml-user-select: none;
+user-select: none
+}
+.mywen .otb .chked .chk-ico {
+background-position: -113px -19px;
+}
+.print .panel {
+	background-color: #fff;
+}
+.print .uploadbar {
+	width: 100%;
+	min-height: 85px;
+	border: 1px #e6e6e6 solid;
+	/*border-left: 3px #a9a9aa solid;*/
+	margin-bottom: 10px;
+}
+.print .uploadbar .title {
+	padding: 5px 20px;
+	min-height: 25px;
+	border-bottom: 1px #e6e6e6 solid;
+}
+.print .uploadbar .title .delete {
+	line-height: 40px;
+	cursor: pointer;
+}
+.print .uploadbar .progress {
+	border-top: 1px #e6e6e6 solid;
+	height: 10px;
+	background-color: #fff;
+	margin-bottom: 0;
+}
+.print .info select {
+	margin-top: 10px;
+	height: 25px;
+	padding: 0 2px;
+	width: 60%;
+}
+.print input.number {
+	height: 25px;
+	margin-top: 10px;
+	padding: 0 4px;
+	width: 40px;
+}
+.print .title .img {
+height: 40px;
+line-height: 40px;
+overflow: hidden;
+white-space: nowrap;
+word-wrap: normal;
+text-overflow: ellipsis;
+-ms-text-overflow: ellipsis;
+-o-text-overflow: ellipsis;
+}
+.print .filetype, .file-ico {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	width: 40px;
+	background-image: url(../img/file-small.png);
+}
+.icon-pdf {
+	background-position: 1px -162px;
+}
+.print .title .name {
+	line-height: 40px;
+	height: 40px;
+	visibility: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+.print .uploadbtn {
+	margin-bottom: 0;
+	border-bottom: 0;
+	padding: 10px 20px;
+}
+.print .uploadbtn .left,.right {
+	margin-bottom: 0;
+}
+.print .info .fen .name {
+	line-height: 40px;
+}
+.school .button {
+	cursor: pointer;
+}
+.shop .accordion .accordion-navigation a {
+	padding: 10px 20px;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+.shop .accordion .accordion-navigation .tabs-content p{
+	font-size: 0.8rem;
+	margin-bottom: 5px;
+}
+#choose-box-wrapper{width:652px;padding:10px;border-radius:5px;display:none;}
+#choose-box{border:1px solid #0078a0;width:650px;background:#fff;}
+#choose-box-title{background:#efefef;color:#111;padding:4px 10px 5px;font-size:14px;font-weight:700;margin:0;}
+#choose-box-title span{font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;}
+#choose-a-province, #choose-a-school{margin:5px 8px 10px 8px;border:1px solid #C3C3C3;}
+#choose-a-province a{display:inline-block;height:18px;line-height:18px;color:#005EAC;text-decoration:none;font-size:9pt;font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;margin:2px 5px;padding:1px;text-align:center;}
+#choose-a-province a:hover{text-decoration:underline;cursor:pointer;}
+#choose-a-province .choosen{background:#005EAC;color:white;}
+#choose-a-school{overflow-x:hidden;overflow-y:auto;height:200px;}
+#choose-a-school a{height:18px;line-height:18px;color:#005EAC;text-decoration:none;font-size:9pt;font-family:Tahoma, Verdana, STHeiTi, simsun, sans-serif;float:left;width:160px;margin:4px 12px;padding-left:10px;background:url(../img/2012072500060712.gif) no-repeat 0 9px;}
+#choose-a-school a:hover{background:#005EAC;color:#fff;}
+#choose-box-bottom{background:#F0F5F8;padding:4px 8px;text-align:right;border-top:1px solid #CCC;height:40px;}
+#choose-box-bottom input{vertical-align:middle;text-align:center;background:#005EAC;color:white;border-top:1px solid #B8D4E8;border-left:1px solid #B8D4E8;border-right:1px solid #114680;border-bottom:1px solid #114680;cursor:pointer;width:60px;height:25px;margin:0px;}
+
+/*
+UploadiFive
+Copyright (c) 2012 Reactive Apps, Ronnie Garcia
+*/
+
+.uploadifive-button {
+}
+.uploadifive-button:hover {
+}
+.progress .meter {
+	width: 0;
+}
+.print .sucinfo {
+	display: none;
+	margin: 9px 10px;
+}
+.print .yenum {
+	line-height: 40px;
+	font-size: 14px;
+}
+.print .school .button {
+	margin: 0;
+}
+.print .school .money {
+	line-height: 36px;
+	text-align: right;
+	font-size: 30px;
+	color: red;
+}
+.print .school .money small {
+	color: #333;
+}
+.print .school .message {
+	margin-top: 10px;
+}
+.order #float_banner {
+	min-height: 800px;
+}
+/*.share {
+	width: 60%;
+}*/
+.print .uploadbtn .intro {
+	font-size: 14px;
+	padding-left: 10px;
+	line-height: 40px;
+}
+.print-main #share {
+	margin-right: 10px;
+}

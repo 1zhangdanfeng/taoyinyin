@@ -1,0 +1,78 @@
+<include file='user/header' />
+<include file='./nav' />
+
+<div class="collapse user">
+<include file='user/left' />
+
+<div class="small-10 large-11 columns">
+<div class="main-box billing">
+
+  <div class="row">
+    <div class="large-12">
+        <ul class="breadcrumbs">
+          <li><i class="fi-home"></i> <a href="#">客户中心</a></li>
+          <li><a href="#">我的积分</a></li>
+        </ul>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-12 panel">
+      <fieldset>
+      <legend>当前积分</legend>
+        <div class="row collapse">
+          <div class="large-4 columns">
+            当前金币：{{$info['point']}}
+          </div>
+          <div class="large-4 columns">
+            已用金币：{{$sum}}
+          </div>
+          <div class="large-4 columns">
+            <a class="button tiny success" data-reveal-id="invite" >赚取金币</a>
+          </div>
+        </div>
+      </fieldset>
+      <table class="otb">
+          <thead>
+            <tr>
+              <th width="5%">#</th>
+              <th width="30%">时间</th>
+              <th>说明</th>
+              <th width="20%">金币变化</th>
+            </tr>
+          </thead>
+          <tbody>
+            <volist name="history" id="row" key="i">
+            <tr>
+              <td>{{$i}}</td>
+              <td><php>echo totime($row['time']);</php></td>
+              <td>{{$row['content']}}</td>
+              <td>{{$row['number']}}</td>
+            </tr>
+            </volist>
+          </tbody>
+        </table>
+        <ul class="stack-for-small round secondary button-group right">
+          <li><a href="<php>echo U('billing', 'p=' . ($page - 1));</php>" class="button secondary tiny">上一页</a></li>
+          <li><a href="<php>echo U('billing', 'p=' . ($page + 1));</php>" class="button secondary tiny">下一页</a></li>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</div>
+
+<div id="invite" class="reveal-modal medium" data-reveal>
+  <h2>邀请注册</h2>
+  <p class="lead">邀请好友注册可以获得积分</p>
+  <div><input type="text" class="expend disabled" value="{{$invite}}"></div>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<div class="clearfix"></div>
+<include file='./footer' />
+  </body>
+</html>

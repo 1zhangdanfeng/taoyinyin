@@ -1,0 +1,1 @@
+a:5:{i:0;s:4:"scid";i:1;s:4:"name";i:2;s:5:"intro";s:3:"_pk";s:4:"scid";s:5:"_type";a:3:{s:4:"scid";s:16:"int(10) unsigned";s:4:"name";s:11:"varchar(32)";s:5:"intro";s:4:"text";}}

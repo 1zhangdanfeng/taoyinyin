@@ -1,0 +1,144 @@
+<include file='user/header' />
+<include file='./nav' />
+
+<div class="collapse user mywen">
+<include file='user/left' />
+
+  <div class="small-10 large-11 columns title">
+    <div class="main-box">
+      <div class="panel">
+        <div>
+          <div class="left">
+            <h3>我的文库</h3>
+          </div>
+          <div class="right upbtn">
+              <a href="<php>echo U('/home/print');</php>" class="button tiny radius secondary">上传</a>
+              <a href="#" id="print" class="button tiny radius">打印</a>
+          </div>
+        </div>
+        <table class="otb">
+          <thead>
+          <tr>
+            <th width="3%"></th>
+            <th>文件名</th>
+            <th width="15%">大小</th>
+            <th width="10%">页数</th>
+            <th width="15%">时间</th>
+          </tr>
+          </thead>
+          <tbody class="otb-tb">
+            <volist name="attachment" id="att">
+            <tr>
+              <td>
+                <span node-type="chk" class="chk" name="{{$att['tid']}}" onselectstart="return false" onselect="document.selection.empty()">
+                    <span class="chk-ico">&nbsp;&nbsp;</span>
+                </span>
+              </td>
+              <td>
+                <div class="left"> {{$att['name']}}</div>
+                <div class="right">
+                  <a href="#" title="删除文档" name="{{$att['tid']}}" class="btn-del"><i class="ico-del"></i></a>
+                  <a href="#" title="技术今天出差了，这个按钮点不了>.<"><i class="ico-rename"></i></a>
+                  <a href="#" title="分享文档" name="{{$att['tid']}}" class="share"><i class="ico-share"></i></a>
+                  <a title="下载文档" href="<php>echo U('/home/attachment/download/', "id={$att['tid']}");</php>"><i class="ico-download"></i></a>
+                </div>
+              </td>
+              <td><php>echo format_bytes($att['size']);</php></td>
+              <td>{{$att['pages']}}页</td>
+              <td><php>echo totime($att['time']);</php></td>
+            </tr>
+            </volist>
+          </tbody>
+        </table>
+        {{$pagenav}}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="clearfix"></div>
+
+<div id="shareMod" class="reveal-modal small" data-reveal>
+  <h2>分享文档</h2>
+  <p class="lead">将文档分享到文库获取积分</p>
+  <div><a href="#" class="button tiny secondary" id="share-btn">分享文档</a></div>
+  <div id="sharecode"></div>
+  <input type="hidden" id="wenid">
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+
+<form method="post" id="plist" style="display:none;" action="<php>echo U('/home/print/submit');</php>"></form>
+
+<include file='./footer' />
+<script>
+  $(document).ready(function(){
+    $("#print").click(function(){
+      var files = [];
+      $("span.chk.chked").each(function(){
+        files.push($(this).attr('name'));
+      })
+      var f = $('#plist');
+      for (var k in files){
+        f.append('<input type="hidden" name="upfile[]" value="'+files[k]+'">');
+        f.append('<input type="hidden" name="number[]" value="1">');
+      }
+      f.submit();
+    })
+    $(".btn-del").click(function(){
+      if (confirm('确认删除文档？')) {
+        $.ajax({
+          'url': '<php>echo U('del');</php>',
+          'type': 'post',
+          'data': {
+            'id': this.name
+          },
+          'success': function(data){
+            if (data) {
+              location.reload();
+            };
+          }
+        })
+      };
+    });
+    $("#share-btn").click(function(){
+      $.ajax({
+        'url': '<php>echo U('share');</php>',
+        'type': 'post',
+        'dataType': 'json',
+        'data': {
+          'id': $("#wenid").val()
+        },
+        'success': function(data){
+          if (data.suc > 0) {
+            $("#sharecode").html('<div data-alert class="alert-box success">\
+  文档已成功分享\
+</div>');
+          }else{
+            $("#sharecode").html('<div data-alert class="alert-box warning">\
+  这个文档已经分享过啦\
+</div>');
+          }
+        }
+      })
+    })
+    $('.share').click(function(){
+      $("#wenid").val(this.name);
+      $("#sharecode").html('');
+      $('#shareMod').foundation('reveal', 'open');
+    })
+    $("span.chk").click(function(){
+      var b = $(this).hasClass("chked");
+      if (b) {
+        $(this).removeClass("chked");
+        $(this.parentNode.parentNode).removeClass("selected");
+      }else{
+        $(this).addClass("chked");
+        $(this.parentNode.parentNode).addClass("selected");
+      }
+    });
+  });
+</script>
+
+  </body>
+</html>

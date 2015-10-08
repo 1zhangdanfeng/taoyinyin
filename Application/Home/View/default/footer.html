@@ -1,0 +1,27 @@
+  <div class="zurb-footer-bottom">
+    <div class="row">
+      <div class="medium-4 medium-4 push-8 columns">
+        <ul class="home-social">
+            <li><a href="#" class="twitter"></a></li>
+            <li><a href="#" class="facebook"></a></li>
+            <li><a href="#" class="mail"></a></li>
+          </ul>
+       </div>
+       <div class="medium-8 medium-8 pull-4 columns">
+          <ul class="zurb-links">
+            <li><a href="<php>echo U('/Shop/Login');</php>">商户入口</a></li>
+            <li><a href="#">微信</a></li>
+            <li><a href="#">新闻<span class="show-for-medium-up"> &amp; 事件</span></a></li>
+            <li><a href="#">联系我们</a></li>
+            <li><a href="http://wpa.qq.com/msgrd?v=3&uin=3060906695&site=qq&menu=yes">客服QQ：3060906695</a></li>
+         </ul>
+         <p class="copyright">© 2014 Taoyinyin, Inc. All rights reserved.</p>
+         <php>echo htmlspecialchars_decode($cache['stat_code']);</php>
+      </div>
+    </div>
+  </div>
+  <script src="{{$static}}js/vendor/jquery.js"></script>
+  <script src="{{$static}}js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>

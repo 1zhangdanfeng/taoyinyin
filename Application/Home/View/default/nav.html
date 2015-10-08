@@ -1,0 +1,35 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">淘印印</a></h1>
+    </li>
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <php>if(empty($islogin) || $islogin <= 0):</php>
+      <li class="active"><a href="<php>echo U('/home/sign/register');</php>">立即注册</a></li>
+      <li><a href="<php>echo U('/home/sign/login');</php>">用户登录</a></li>
+      <php>else:</php>
+      <li class="active"><a href="<php>echo U('/home/print');</php>">立即打印</a></li>
+      <li class="has-dropdown">
+        <a href="#">个人中心</a>
+        <ul class="dropdown">
+          <li><a href="<php>echo U('/home/info/order');</php>">我的打印</a></li>
+          <li class="active"><a href="<php>echo U('/home/info/billing');</php>">我的积分</a></li>
+          <li><a href="<php>echo U('/home/info');</php>">个人资料</a></li>
+          <li><a href="<php>echo U('/home/sign/logout');</php>">退出登录</a></li>
+        </ul>
+      </li>
+      <php>endif;</php>
+    </ul>
+    <ul class="left">
+      <li class="divider"></li>
+      <li><a href="{{$www}}">主页</a></li>
+      <li class="divider"></li>
+      <li><a href="<php>echo U('/home/wen');</php>">文库</a></li>
+      <li class="divider"></li>
+      
+    </ul>
+  </section>
+</nav>

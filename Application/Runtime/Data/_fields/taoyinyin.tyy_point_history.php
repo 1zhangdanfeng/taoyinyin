@@ -1,0 +1,1 @@
+a:7:{i:0;s:4:"phid";i:1;s:3:"uid";i:2;s:4:"time";i:3;s:7:"content";i:4;s:6:"number";s:3:"_pk";s:4:"phid";s:5:"_type";a:5:{s:4:"phid";s:16:"int(10) unsigned";s:3:"uid";s:16:"int(10) unsigned";s:4:"time";s:16:"int(10) unsigned";s:7:"content";s:12:"varchar(128)";s:6:"number";s:7:"int(11)";}}

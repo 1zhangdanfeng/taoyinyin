@@ -1,0 +1,86 @@
+<include file='wen/header' />
+<include file='./nav' />
+    
+<div class="row wen">
+<h3>校园文库</h3>
+<div class="panel">
+  <form method="get">
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row collapse">
+          <div class="small-4 columns">
+            <input type="text" name="school" class="button tiny success school postfix" id="school-name" value="西安电子科技大学" />
+          </div>
+          <div class="small-7 columns">
+            <input type="text" name="word" placeholder="搜索文档">
+          </div>
+          <div class="small-1 columns">
+            <button type="submit" class="button postfix">Go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="panel" style="border-top:0;">
+  <for start="0" end="$count" step="3" name="i" >
+  <div class="columns oneline">
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#" name="{{$att[$i]['tid']}}" class="print">{{$att[$i]['name']}}</a> <small><php>echo totime($att[$i]['time']);</php> </small></h6>
+      <p class="intro">简介：{{$att[$i]['intro']}}</p>
+    </div>
+    <php>if($att[$i + 1]):</php>
+    <div class="large-4 small-4 columns left">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#" name="{{$att[$i+1]['tid']}}" class="print">{{$att[$i+1]['name']}}</a> <small><php>echo totime($att[$i+1]['time']);</php> </small></h6>
+      <p class="intro">简介：{{$att[$i+1]['intro']}}</p>
+    </div>
+    <php>endif;
+    if($att[$i + 2]):
+    </php>
+    <div class="large-4 small-4 columns left">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#" name="{{$att[$i+2]['tid']}}" class="print">{{$att[$i+2]['name']}}</a> <small><php>echo totime($att[$i+2]['time']);</php> </small></h6>
+      <p class="intro">简介：{{$att[$i+2]['intro']}}</p>
+    </div>
+    <php>endif;</php>
+  </div>
+  </for>
+  <div class="clearfix"></div>
+</div>
+
+</div>
+
+<div class="clearfix" style="height: 500px;"></div>
+
+<div id="choose-box-wrapper">
+  <div id="choose-box">
+    <div id="choose-box-title">
+      <span>选择学校</span>
+    </div>
+    <div id="choose-a-province"></div>
+    <div id="choose-a-school"></div>
+    <div id="choose-box-bottom">
+      <input type="botton" onclick="hide()" value="关闭" />
+    </div>
+  </div>
+</div>
+
+<form method="post" id="plist" style="display:none;" action="<php>echo U('/home/print/submit');</php>"></form>
+
+<include file='./footer' />
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#school-name').bind('click', function(){
+      pop();
+    });
+    $(".wen .print").click(function(){
+      if (confirm("是否打印此文档")) {
+        var f = $('#plist');
+        f.append('<input type="hidden" name="upfile[]" value="'+this.name+'">');
+        f.append('<input type="hidden" name="number[]" value="1">');
+        f.submit();
+      }
+    })
+  });
+</script>
+  </body>
+</html>

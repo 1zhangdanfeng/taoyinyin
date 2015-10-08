@@ -1,0 +1,110 @@
+<include file='wen/header' />
+<include file='./nav' />
+    
+<div class="row wen">
+<h3>校园文库</h3>
+<div class="panel" >
+  <form method="get" action="<php>echo U('search');</php>">
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row collapse">
+          <div class="small-4 columns">
+            <input type="text" name="school" class="button tiny success school postfix" id="school-name" value="西安电子科技大学" />
+          </div>
+          <div class="small-7 columns">
+            <input type="text" name="word" placeholder="搜索文档">
+          </div>
+          <div class="small-1 columns">
+            <button type="submit" class="button postfix">Go</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- 
+<div class="panel" style="border-top:0;">
+<div class="columns first oneline">
+  <div class="left">大家都在搜</div>
+  <div class="right"><small><a href="#">更多&gt;&gt;</a></small></div>
+</div>
+  <div class="columns oneline last">
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">高数复习资料</a> <small>2014-11-30 </small></h6>
+      <p class="intro">简介：西电高数统一复习资料。西电高数统一复习资料。西电高数统一复习资料。西电高数统一复习资料。</p>
+    </div>
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">谭浩强C语言入门经典</a> <small>2014-11-30</small></h6>
+      <p class="intro">简介：经典C语言入门教程。</p>
+    </div>
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">老人与海</a> <small>2014-11-30</small></h6>
+      <p class="intro">简介：诺贝尔文学奖得主海明威著名小说。</p>
+    </div>
+  </div>
+<div class="columns first oneline">
+  <div class="left">最新上传</div>
+  <div class="right"><small><a href="#">更多&gt;&gt;</a></small></div>
+</div>
+
+  <div class="columns oneline">
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">高数复习资料</a> <small>2014-11-30 </small></h6>
+      <p class="intro">简介：西电高数统一复习资料。西电高数统一复习资料。西电高数统一复习资料。西电高数统一复习资料。</p>
+    </div>
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">谭浩强C语言入门经典</a> <small>2014-11-30</small></h6>
+      <p class="intro">简介：经典C语言入门教程。</p>
+    </div>
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">老人与海</a> <small>2014-11-30</small></h6>
+      <p class="intro">简介：诺贝尔文学奖得主海明威著名小说。</p>
+    </div>
+  </div>
+  <div class="columns oneline last">
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">高数复习资料</a> <small>2014-11-30 </small></h6>
+      <p class="intro">简介：西电高数统一复习资料。西电高数统一复习资料。西电高数统一复习资料。西电高数统一复习资料。</p>
+    </div>
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">谭浩强C语言入门经典</a> <small>2014-11-30</small></h6>
+      <p class="intro">简介：经典C语言入门教程。</p>
+    </div>
+    <div class="large-4 small-4 columns">
+      <h6><span title="doc" class="ic ic-ppt"> </span> <a href="#">老人与海</a> <small>2014-11-30</small></h6>
+      <p class="intro">简介：诺贝尔文学奖得主海明威著名小说。</p>
+    </div>
+  </div>
+ -->
+
+  <div class="clearfix"></div>
+</div>
+
+</div>
+
+<div class="clearfix" style="height: 500px;"></div>
+
+<div id="choose-box-wrapper">
+  <div id="choose-box">
+    <div id="choose-box-title">
+      <span>选择学校</span>
+    </div>
+    <div id="choose-a-province"></div>
+    <div id="choose-a-school"></div>
+    <div id="choose-box-bottom">
+      <input type="botton" onclick="hide()" value="关闭" />
+    </div>
+  </div>
+</div>
+
+<include file='./footer' />
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#school-name').bind('click', function(){
+      pop();
+    });
+  });
+</script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>淘印印 | 在线打印</title>
+    <link rel="stylesheet" href="{{$static}}css/foundation.css" />
+    <link rel="stylesheet" type="text/css" href="{{$static}}css/self.css">
+    <link rel="stylesheet" href="{{$static}}css/index_2.css"/>
+  </head>
+  <body class="index">
+<include file='./nav' />
+    
+<section class="index_print">
+    <img src="{{$static}}img/index_02.jpg"/>
+    <div class="index_logo"></div>
+</section>
+
+
+<button class="start_print" onclick="location.href='<php>echo U('/home/print');</php>';">立即免费打印</button>
+<section class="avail_info">
+    <div class="step_intro">
+        <div class="step_bar">
+            <img src="{{$static}}img/step_bar.png"/>
+        </div>
+        <div class="step_detail step1">
+            <h3>Step1</h3>
+
+            <p class="step_describe">用户登陆后，在线提交需要打印的文件。或去<span class="font_red">文库</span>选择所需文件打印。</p>
+
+            <p class="add_text">
+                *暂时仅支持PDF格式
+            </p>
+        </div>
+        <div class="step_detail step2">
+            <h3>Step2</h3>
+
+            <p class="step_describe">在线编辑、确认。设置打印格式，属性。</p>
+
+            <div class="add_img">
+                <img src="{{$static}}img/step_2.jpg"/>
+            </div>
+        </div>
+        <div class="step_detail step3">
+            <h3>Step3</h3>
+            <p class="step_describe">在线提交文件到打印店。</p>
+
+            <div class="add_img">
+                <img src="{{$static}}img/step_3.png"/>
+            </div>
+        </div>
+        <div class="step_detail step4">
+            <h3>Step4</h3>
+
+            <p class="step_describe">按照约定的时间，线下领取打印的资料。</p>
+
+            <div class="add_img">
+                <img src="{{$static}}img/step_4.png"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="star">
+    <img src="{{$static}}img/star_bg.jpg"/>
+    <div class="star_logo"></div>
+    <div class="eng_slogan">Run to future.Never stop.</div>
+
+</section>
+
+<include file='./footer' />
+<script type="text/javascript" src="{{$static}}js/index_2.js"></script>
+  </body>
+</html>
